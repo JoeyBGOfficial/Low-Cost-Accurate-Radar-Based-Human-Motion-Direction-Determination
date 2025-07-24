@@ -3,8 +3,8 @@ Model Construction Script
 '''
 # Former Author: Lerbron.
 # Improved By: JoeyBG.
-# Date: 2025.7.22.
-# Platform: Python 3.7, paddlepaddle 2.5.2.
+# Date: 2025.7.24.
+# Platform: Python 3.10.10, paddlepaddle 3.0.0.
 # Affiliation: Beijing Institute of Technology.
 # 
 # Network Structure:
