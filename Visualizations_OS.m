@@ -40,7 +40,7 @@ Class_Names = load("Class_Names.mat").Class_Names;
 Sliding_Frame_Window = 2; % The slow time window for each DTM is 2 seconds.
 Max_Frequency_of_DTM = 3080; % For 77 GHz center frequency, 6 m/s target leads to 3080 Hz Doppler frequency.
 Cutting_Threshold = 0.62; % Threshold detection of input image, suggested value: 0.62
-Estimation_Resolution = 64; % Image resize scale for feature dataset generation, suggested value: 224/64.
+Estimation_Resolution = 80; % Image resize scale for feature dataset generation, suggested value: 224/64.
 
 % Define the list of angles.
 angles = {'000', '030', '045', '060', '090', '300', '315', '330'};
@@ -85,10 +85,10 @@ for i = 1:length(angles)
             % colorbar;
             % xlabel('Time (s)');
             % ylabel('Doppler (Hz)');
-            set(gca,'XTick',0:Resize_Shape/3:Resize_Shape);
-            set(gca,'XTicklabel',{'','','','',''});
+            set(gca,'XTick',0:Resize_Shape/2:Resize_Shape);
+            set(gca,'XTicklabel',{'','',''});
             set(gca,'YTick',0:Resize_Shape/3:Resize_Shape);
-            set(gca,'YTicklabel',{'','','','',''});
+            set(gca,'YTicklabel',{'','','',''});
             set(gca,'FontName','TsangerYuMo W03');
             set(gca,'FontSize',16);
             set(gca,'ydir','normal');
@@ -110,10 +110,10 @@ for i = 1:length(angles)
             % colorbar;
             % xlabel('Time (s)');
             % ylabel('Doppler (Hz)');
-            set(gca,'XTick',0:Estimation_Resolution/3:Estimation_Resolution);
-            set(gca,'XTicklabel',{'','','','',''});
+            set(gca,'XTick',0:Estimation_Resolution/2:Estimation_Resolution);
+            set(gca,'XTicklabel',{'','',''});
             set(gca,'YTick',0:Estimation_Resolution/3:Estimation_Resolution);
-            set(gca,'YTicklabel',{'','','','',''});
+            set(gca,'YTicklabel',{'','','',''});
             set(gca,'FontName','TsangerYuMo W03');
             set(gca,'FontSize',16);
             set(gca,'ydir','normal');
