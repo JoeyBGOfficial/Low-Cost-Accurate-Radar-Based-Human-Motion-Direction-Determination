@@ -3,7 +3,7 @@
 
 ### Write Sth. Upfront: ###
 
-So this is the second project that I am publishing on a preprint platform. I do not plan to submit it to a journal or conference, but it is open source.
+So this is the second project that I am publishing on a preprint platform, which is not planning to submit to a journal or conference, but is open source.
 
 ### Basic Information: ###
 
