@@ -17,10 +17,6 @@ $\textbf{\textcolor{blue}{arXiv Simplified Version of Paper}}$ can be downloaded
 
 **Abstract:** This work is completed on a whim after discussions with my junior colleague. The motion direction angle affects the micro-Doppler spectrum width, thus determining the human motion direction can provide important prior information for downstream tasks such as gait recognition. However, Doppler-Time map (DTM)-based methods still have room for improvement in achieving feature augmentation and motion determination simultaneously. In response, a low-cost but accurate radar-based human motion direction determination (HMDD) method is explored in this paper. In detail, the radar-based human gait DTMs are first generated, and then the feature augmentation is achieved using feature linking model. Subsequently, the HMDD is implemented through a lightweight and fast Vision Transformer-Convolutional Neural Network hybrid model structure. The effectiveness of the proposed method is verified through open-source dataset.
 
-**Corresponding Papers:**
-
-[1] W. Gao, “Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination,” arXiv (Cornell University), August. 2025, Link: .
-
 ### Important!!! ###
 
 **The data used in this paper's experiments were taken entirely from: L. Du, X. Chen, Y. Shi, S. Xue and M. Xie, “MMRGait-1.0: A radar time-frequency spectrogram dataset for gait recognition under multi-view and multi-wearing conditions,” J. Radars, vol. 12, no. 4, pp. 892-905, 2023.**
