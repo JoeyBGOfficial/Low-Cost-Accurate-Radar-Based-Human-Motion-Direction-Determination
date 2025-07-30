@@ -98,16 +98,15 @@ This function implements the Feature-Linking Model (FLM) to enhance grayscale im
 
 No datafiles included.
 
-## III. MICRO-DOPPLER SIGNATURE EXTRACTION BASED ON ACM ##
+## III. LOW-COST BUT ACCURATE HMDD METHOD ##
 
 ### A. Theory in Simple ###
 
-The micro-Doppler foreground and noise background centers using image corner detection are first estimated. Using the two centers as starting points, the micro-Doppler signature extraction is implemented based on multiphase Chan-Vese ACM model.
+Essentially, this part uses a slightly modified SBCFormer to implement augmented DTM to angle tag mapping. The proposed network is a lightweight ViT-CNN hybrid architecture with fewer model parameters and extremely high inference efficiency, while achieving high accuracy performance at the same time. The code provides two options: Both Matlab version and an improved Python version. 
 
-![ACM_Schematic](https://github.com/user-attachments/assets/0e152377-deaf-4eed-bc82-f599f9b8c97e)
+![HMDD_Network](https://github.com/user-attachments/assets/dacea997-be67-4064-ac07-40b409fd7e5b)
 
-Fig. 3. Schematic diagram of the proposed ACM-based micro-Doppler signature extraction method.
-
+Fig. 2. Schematic of the proposed low-cost accurate HMDD model based on a ViT-CNN hybrid architecture.
 
 ### B. Codes Explanation (Folder: ACM_Based_Micro-Doppler_Extraction) ###
 
