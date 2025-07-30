@@ -37,7 +37,7 @@ Fig. 1. Schematic of the proposed FLM-based feature augmentation method.
 
 #### Dataset_Reconstruction_OS.m ####
 
-This script organizes .mat files from a dataset by traversing 121 subfolders and their secondary subfolders, sorting files into one of eight target folders based on a three-digit direction code in the filename.
+This script organizes .mat files from a dataset by traversing 121 subfolders and their secondary subfolders, sorting files into one of eight target folders based on a three-digit direction code in "Open_Source_Dataset\Direction_Dataset_OS\".
 
 **Input:** None (uses predefined `main_path` and `target_path` for source and destination directories).
 
