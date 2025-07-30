@@ -17,7 +17,7 @@ This repository is the open source code for my latest work: "Exploration of Low-
 
 **Corresponding Papers:**
 
-[1] W. Gao, “Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination,” arXiv (Cornell University), August. 2025, Link: https://arxiv.org/abs/2506.05169.
+[1] W. Gao, “Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination,” arXiv (Cornell University), August. 2025, Link: .
 
 ### Important!!! ###
 
