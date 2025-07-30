@@ -101,9 +101,11 @@ This function implements the Feature-Linking Model (FLM) to enhance grayscale im
 
 **Output:** 2D matrix `Rep1gs` (enhanced grayscale image).
 
-### C. Datafiles Explanation (None) ###
+### C. Datafiles Explanation (Folder: Open_Source_Dataset\Feature_Enhanced_Dataset_OS_64.zip) ###
 
-No datafiles included.
+#### 1. Feature_Enhanced_Dataset_OS_64.zip ####
+
+Here we provide a set of feature-enhanced data in ".zip" file stored as $64 \times 64$ three-channel ".png" files.
 
 ## III. LOW-COST BUT ACCURATE HMDD METHOD ##
 
