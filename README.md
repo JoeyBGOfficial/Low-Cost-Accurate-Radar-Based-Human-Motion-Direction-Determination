@@ -3,13 +3,15 @@
 
 ### Write Sth. Upfront: ###
 
-So this is the second project that I am publishing on a preprint platform, which is not planning to submit to a journal or conference, but is open source. 
-
-The main purpose of this work is to provide an angle prior for radar-based human gait recognition tasks. At the same time, we hope to explore a relatively accurate and low-cost solution.
+So this is the second project that I am publishing on a preprint platform, which is not planning to submit to a journal or conference, but is open source. The main purpose of this work is to provide an angle prior for radar-based human gait recognition tasks. At the same time, we hope to explore a relatively accurate and low-cost solution.
 
 ### Basic Information: ###
 
 This repository is the open source code for my latest work: "Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination", submitted to arXiv.
+
+ArXiv Version of Paper can be downloaded at:
+
+Full Version of Paper can be downloaded at: 
 
 **My Email:** JoeyBG@126.com;
 
