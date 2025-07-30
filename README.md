@@ -29,11 +29,11 @@ This repository is the open source code for my latest work: "Exploration of Low-
 
 ### A. Theory in Simple ###
 
-The proposed method first extracts the baseband signal of TWR echo by pulse compression, and then concatenates it along the slow time dimension, and the resulting image is a range-time map (RTM). The Doppler-time map (DTM) is obtained by summing all range bins of the RTM and doing the short time fourier transform (STFT) along the slow time dimension. The target image after clutter and noise suppression is obtained by doing Moving Target Indication Filtering (MTI) and Empirical Modal Decomposition (EMD) on both RTM and DTM, respectively.
+The open-source dataset already provides DTM images stored in ".mat" format, so this paper does not need to implement signal preprocessing in code. The proposed method mainly uses improved FLM to achieve micro-Doppler signature extraction and enhancement. 
 
-![TWR_Echo_Model](https://github.com/user-attachments/assets/b2033710-afad-4ded-a4c6-5d4502d2a875)
+![FLM](https://github.com/user-attachments/assets/2d1d368c-bc51-4a76-8d5b-e89028bbb1cb)
 
-Fig. 2. TWR human echo model and data processing.
+Fig. 1. Schematic of the proposed FLM-based feature augmentation method.
 
 
 ### B. Codes Explanation (Folder: Image_Based_Data_Processing) ###
