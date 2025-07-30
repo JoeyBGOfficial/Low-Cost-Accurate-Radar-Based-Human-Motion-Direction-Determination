@@ -105,7 +105,7 @@ This function implements the Feature-Linking Model (FLM) to enhance grayscale im
 
 #### 1. Feature_Enhanced_Dataset_OS_64.zip ####
 
-Here we provide a set of feature-enhanced data in ".zip" file stored as $64 \times 64$ three-channel ".png" files.
+Here we provide a set of feature-enhanced data in ".zip" file stored as $64 \times 64$ RGB ".png" files.
 
 ## III. LOW-COST BUT ACCURATE HMDD METHOD ##
 
@@ -197,14 +197,14 @@ My favorite colormap file used for generating figures in the paper.
 
 Eight sets of data used to generate paper visualizations, with corresponding original DTMs, and augmented DTMs.
 
-## VI. SOME THINGS TO NOTE ##
+## V. SOME THINGS TO NOTE ##
 
-**(1) Reproducibility Issues:** All input images must be gray-scale maps stored in Unit8 form or Double form. In other words, it has to be a 2D matrix, preferably a square matrix. At least from my pre-upload debugging, the code must not report errors as long as the folders and data are placed correctly.
+**(1) Reproducibility Issues:** All input data or images must be gray-scale maps stored in Unit8 form or Double form. At least from my pre-upload debugging, the code must not report errors as long as the folders and data are placed correctly.
 
-**(2) Environment Issues:** The project consists of the pure MATLAB code. The recommended MATLAB version is R2024b and above. The program is executed by the CPU environment. For the purpose of accelerating the optimization process, we recommend trying to port the code to the GPU.
+**(2) Environment Issues:** The project consists of mostly MATLAB code with some python code. The recommended MATLAB version is R2024b and above. The program is executed by the CPU environment of Matlab code and GPU environment of Python code. The Python code also provides CPU running options. Of course, we recommend using GPU to speed up execution.
 
-**(3) Algorithm Design Issues:** If you feel that the proposed method has a lot of room for improvement in terms of feature extraction robustness, inference accuracy, and computational speed. My suggestion is: Optimize the diffusion strategy of the level set of ACM steps for radar images, and replace the Mapper algorithm as a more reasonable strategy for measuring the topological similarity of point clouds.
+**(3) Algorithm Design Issues:** Adjusting the output image scale of FLM can change the amount of micro-Doppler detail information in the augmented DTM. Correspondingly, the size of the input image to the network can be adjusted. To obtain better parameter count and inference speed performance, the number of stacked feature extraction modules in the network can be reduced to two.
 
-**(4) Right Issues: ⭐The project is limited to learning purposes only. Part of the ACM code is from Chunming Li's open source repository, contour code is borrowed from the MATLAB embedded functions, and the other content is my own original. Any use or interpretation without authorized by me is not allowed!⭐**
+**(4) Right Issues: ⭐The project is limited to learning purposes only. Dataset is from open-source work of L. Du et al. Part of the FLM code is from Chunming kunzhan's open source repository. Any use or interpretation without authorized is not allowed!⭐**
 
 Last but not least, hope that my work will bring positive contributions to the open source community in the filed of radar signal processing.
