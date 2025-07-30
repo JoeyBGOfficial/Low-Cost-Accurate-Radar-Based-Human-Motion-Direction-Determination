@@ -39,33 +39,53 @@ Fig. 1. Schematic of the proposed FLM-based feature augmentation method.
 ### B. Codes Explanation (Folder: Image_Based_Data_Processing) ###
 
 
-#### 1. EMD ####
+#### 1. FLM_Processing ####
 
-This function denoises a radar RTM using EMD by discarding initial intrinsic mode functions (IMFs).
+This function enhances an input image using the FLM after adaptive histogram equalization and thresholding, resizing the output to a specified resolution.
 
-**Input:** 2D matrix `RTM`; Integer `num_discard` denotes the number of IMFs to discard.
+**Input:** 2D/3D matrix `tfmap` (grayscale or RGB image); Float `Cutting_Threshold` for low-intensity pixel cutoff; Integer `Estimation_Resolution` for output image size.
 
-**Output:** 2D matrix `denoised_RTM`.
+**Output:** 2D matrix `FLM_Enhancement` (enhanced image).
 
+#### 2. v2rgb ####
 
+This function combines a processed V channel with the original image’s H and S channels to produce an enhanced RGB image, or returns the V channel directly for grayscale inputs.
 
-#### 2. MTI ####
+**Input:** 2D/3D matrix `I` (grayscale or RGB image); 2D matrix `V` (processed V channel).
 
-This function applies a simple MTI filter to a RTM by subtracting adjacent columns.
+**Output:** 2D/3D matrix `Io` (enhanced RGB or grayscale image).
 
-**Input:** 2D matrix `I`, here we usually use RTM for MTI processing.
+#### 3. rgb2v ####
 
-**Output:** 2D matrix `filtered_I`.
+This function extracts the V component from an RGB image in HSV color space, or returns the input unchanged if it is grayscale.
 
+**Input:** 2D/3D matrix `I` (grayscale or RGB image).
 
+**Output:** 2D matrix `Iv` (V channel or original grayscale image).
 
-#### 3. DTM_Generator ####
+#### 4. QEvaluation ####
 
-This function transforms a radar RTM into a DTM using the Short-Time Fourier Transform (STFT).
+This function assesses the quality of an enhanced grayscale image by computing Local Contrast (LC), Spatial Frequency (SF), and Mean Gradient (MG).
 
-**Input:** 2D matrix `I`, RTM is used here; Optional parameters: `fs` for sampling frequency, `window` for window function, `noverlap` for overlap between windows, `nfft` for FFT points.
+**Input:** 2D matrix `I` (grayscale image).
 
-**Output:** 2D matrix `DTM`.
+**Output:** Scalars `lc` (local contrast), `SF` (spatial frequency), `MG` (mean gradient).
+
+#### 5. GrayStretch ####
+
+This function enhances contrast in a grayscale image by stretching pixel intensities to the full 0-255 range based on histogram bounds.
+
+**Input:** 2D matrix `I` (grayscale image); Float `Per` (percentage of histogram to stretch).
+
+**Output:** 2D matrix `GS` (stretched grayscale image).
+
+#### 6. FLM ####
+
+This function implements the Feature-Linking Model (FLM) to enhance grayscale images through iterative processing, followed by gray-level stretching.
+
+**Input:** 2D matrix `I` (grayscale image).
+
+**Output:** 2D matrix `Rep1gs` (enhanced grayscale image).
 
 
 ### C. Datafiles Explanation (Folder: Example_Datas) ###
