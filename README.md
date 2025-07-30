@@ -9,9 +9,9 @@ So this is the second project that I am publishing on a preprint platform, which
 
 This repository is the open source code for my latest work: "Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination", submitted to arXiv.
 
-ArXiv Version of Paper can be downloaded at:
+**ArXiv Version of Paper** can be downloaded at:
 
-Full Version of Paper can be downloaded at: https://smallpdf.com/file#s=71472927-4d9e-4cb6-a1b2-76bc9b5cf0d4.
+**Full Version of Paper** can be downloaded at: https://smallpdf.com/file#s=71472927-4d9e-4cb6-a1b2-76bc9b5cf0d4.
 
 **My Email:** JoeyBG@126.com;
 
