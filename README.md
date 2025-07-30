@@ -7,19 +7,15 @@ So this is the second project that I am publishing on a preprint platform, which
 
 ### Basic Information: ###
 
-This repository is the open source code for my latest work: "Through-the-Wall Radar Human Activity Recognition WITHOUT Using Neural Networks", submitted to arXiv.
-
-![Introduction](https://github.com/user-attachments/assets/1fdef49f-98f2-4b03-ac26-fef91f58b39c)
-
-Fig. 1. Current works in this field take neural network-based methods as the research hotspot. This work returns to rethink the value of traditional mindsets.
+This repository is the open source code for my latest work: "Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination", submitted to arXiv.
 
 **My Email:** JoeyBG@126.com;
 
-**Abstract:** After a few years of research in the field of through-the-wall radar (TWR) human activity recognition (HAR), I found that we seem to be stuck in the mindset of training on radar image data through neural network models. The earliest related works in this field based on template matching did not require a training process, and I believe they have never died. Because these methods possess a strong physical interpretability and are closer to the basis of theoretical signal processing research. In this paper, I would like to try to return to the original path by attempting to eschew neural networks to achieve the TWR HAR task and challenge to achieve intelligent recognition as neural network models. In detail, the range-time map and Doppler-time map of TWR are first generated. Then, the initial regions of the human target foreground and noise background on the maps are determined using corner detection method, and the micro-Doppler signature is segmented using the multiphase active contour model. The micro-Doppler segmentation feature is discretized into a two-dimensional point cloud. Finally, the topological similarity between the resulting point cloud and the point clouds of the template data is calculated using Mapper algorithm to obtain the recognition results. The effectiveness of the proposed method is demonstrated by numerical simulated and measured experiments.
+**Abstract:** This work is completed on a whim after discussions with my junior colleague. The motion direction angle affects the micro-Doppler spectrum width, thus determining the human motion direction can provide important prior information for downstream tasks such as gait recognition. However, Doppler-Time map (DTM)-based methods still have room for improvement in achieving feature augmentation and motion determination simultaneously. In response, a low-cost but accurate radar-based human motion direction determination (HMDD) method is explored in this paper. In detail, the radar-based human gait DTMs are first generated, and then the feature augmentation is achieved using feature linking model. Subsequently, the HMDD is implemented through a lightweight and fast Vision Transformer-Convolutional Neural Network hybrid model structure. The effectiveness of the proposed method is verified through open-source dataset.
 
 **Corresponding Papers:**
 
-[1] Weicheng Gao, “Through-the-Wall Radar Human Activity Recognition WITHOUT Using Neural Networks,” arXiv (Cornell University), June. 2025, Link: https://arxiv.org/abs/2506.05169.
+[1] Weicheng Gao, “Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination,” arXiv (Cornell University), August. 2025, Link: https://arxiv.org/abs/2506.05169.
 
 ### Important!!! ###
 
