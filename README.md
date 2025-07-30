@@ -19,7 +19,9 @@ This repository is the open source code for my latest work: "Exploration of Low-
 
 ### Important!!! ###
 
-**After downloading the entire repository, first unzip "Image_Templates.rar" and "Pointcloud_Templates.rar". Put your own dataset in the unzipped "Image_Templates" folder according to the subfolders' name. Next, feel free to use the code!**
+**The data used in this paper's experiments were taken entirely from: L. Du, X. Chen, Y. Shi, S. Xue and M. Xie, “MMRGait-1.0: A radar time-frequency spectrogram dataset for gait recognition under multi-view and multi-wearing conditions,” J. Radars, vol. 12, no. 4, pp. 892-905, 2023.**
+
+**First, download the complete open source dataset and place all subfolders from "001" to "121" in the "Open_Source_Dataset\Original_MAT_Dataset_OS\" path. Next, run the code. After my debugging, if the software version and third-party libraries are installed correctly, there should be no error messages.**
 
 ## II. TWR HUMAN ECHO MODEL ##
 
