@@ -159,141 +159,31 @@ This Python script defines the model family (XS, S, B, L versions) for image pro
 
 ### C. Datafiles Explanation (Folder: HMDD_Model_Python\work\model\) ###
 
-#### best_model.pdparams, best_optimizer.pdopt, final_model.pdparams, final_optimizer.pdopt ####
+#### 1. best_model.pdparams, best_optimizer.pdopt, final_model.pdparams, final_optimizer.pdopt ####
 
 Python version network that stores the model files of the optimal epoch and the last epoch during training.
 
-## IV. Indoor HAR Based on Point Cloud Matching ###
+## IV. Visualization ##
 
 ### A. Theory in Simple ###
 
-The proposed method first converts the level sets corresponding to the micro-Doppler signature into contour point clouds using the MATLAB embedded contour() function. Secondly, the point cloud and the template are subjected to a similarity metric using the Mapper algorithm to obtain the final recognition results.
+The experiment visualizeseight different angles of human motion using the example DTMs and their augmented images.
 
-![Pointcloud_Matching](https://github.com/user-attachments/assets/506bf81d-1cd3-4fa8-9acd-e57a935a88e3)
+![Visualizations](https://github.com/user-attachments/assets/08cf1df3-263e-41df-8cf2-a83c1e7d0d13)
 
-Fig. 4. Schematic diagram of the proposed indoor HAR method based on point cloud topological structure similarity using Mapper algorithm.
+Fig. 3. Visualization of DTMs in various motion directions. The first and second row represent the images before and after feature augmentation, respectively.
 
+#### Visualizations_OS ####
 
-### B. Codes Explanation (Folder: PointCloud_Matching) ###
+This script processes .mat files from the 'Visualizations\Showcase Datas\' directory, generating and saving visualizations of DTMs and their augmented versions using the FLM_Processing function, with output saved as .png files in specified directories.
 
+**Input:** None (uses predefined `src_dir` for input files and `dest_dir`, `augment_dir` for output directories; requires `FLM_Processing` function and my favorite colormap).
 
-#### 1. Mapper_Similarity ####
+**Output:** None (saves original and augmented DTM visualizations as .png files).
 
-This function computes the topological similarity between two 2D point clouds using a simplified Mapper algorithm, measuring similarity via the Jaccard index of their Mapper graph edge sets.
+### B. Codes Explanation (None) ###
 
-**Input:** Two 2D point clouds `PC` and `PC_Class` of 2xN and 2xM matrices; Optional: integers `nx`, `ny` of grid squares, scalar `overlap_factor`.
-
-**Output:** Scalar `similarity` represents the Jaccard similarity between edge sets.
-
-
-#### 2. Select_Points_for_Columns ####
-
-This function identifies the top points with the largest values in each column of a matrix, recording their row indices.
-
-**Input:** 2D matrix `phi_1_Normalized` with size Estimation_Resolution x Estimation_Resolution, integer `Points_Num_Per_Column`.
-
-**Output:** Matrix `points` in 2x(Points_Num_Per_Column*Estimation_Resolution) of row and column indices of the top points.
-
-
-#### 3. contour ####
-
-This function generates contour plots of a 2D matrix with options for specifying coordinates, levels, and line styles, supporting automatic or user-defined contour levels.
-
-**Input:** Variable inputs: matrix `Z`, optional coordinates `X`, `Y`, levels `N` or `V`, axes handle, line specifications, and name-value pairs.
-
-**Output:** Contour matrix `cout`, graphics handle `hand`.
-
-
-#### 4. Wasserstein_Similarity ####
-
-This function computes the 2-Wasserstein distance between two 2D point clouds using the optimal transport formulation with squared Euclidean distance costs.
-
-**Input:** Two 2D point clouds `pointCloud1` and `pointCloud2` of 2xN and 2xM matrices.
-
-**Output:** Scalar `similarity` represents the 2-Wasserstein distance.
-
-
-### C. Datafiles Explanation (Folder: None) ###
-
-None.
-
-## V. Main Branch & Visualization ##
-
-### A. Theory in Simple ###
-For simulated RTM, simulated DTM, measured RTM, and measured DTM, we wrote different function scripts for the whole process of feature extraction and recognition. Main.m is used to achieve the inference prediction. The generation code of the template point cloud library and the code used to give all the visualized images in the paper are also open-sourced together.
-
-![Simulated_Visualization](https://github.com/user-attachments/assets/38567527-71c4-42eb-8d46-34d9a8be968b)
-
-Fig. 5. Simulated visualization results of the proposed method.
-
-![Measured_Visualization](https://github.com/user-attachments/assets/d5a8d2b3-b9d6-4d47-9fb7-cea343d9052d)
-
-Fig. 6. Measured visualization results of the proposed method.
-
-### B. Codes Explanation (Folder: Root) ###
-
-
-#### 1. Feature_Extraction_SimHRTM ####
-
-This function deals with simulated RTM data, using a four-phase level set method for segmentation and creating a sparse point cloud from the extracted contour features.
-
-**Input:** Path to the image data.
-
-**Output:** Point cloud data of the extracted features.
-
-
-#### 2. Feature_Extraction_SimHDTM ####
-
-This function processes simulated DTM data, employing a four-phase level set method for image segmentation and generating a sparse point cloud from the extracted contour features.
-
-**Input:** Path to the image data.
-
-**Output:** Point cloud data representing the extracted features.
-
-
-#### 3. Feature_Extraction_RWRTM ####
-
-This function handles measured RTM data, utilizing a four-phase level set method for segmentation and producing a sparse point cloud from the contour of the extracted features.
-
-**Input:** Path to the image data.
-
-**Output:** Point cloud data of the extracted features.
-
-
-#### 4. Feature_Extraction_RWDTM ####
-
-This function processes measured DTM data, applying a four-phase level set method for image segmentation and generating a sparse point cloud from the contour features.
-
-**Input:** Path to the image data.
-
-**Output:** Point cloud data representing the extracted features.
-
-#### 5. Main ####
-
-This script serves as the primary interface for TWR HAR. It allows users to select data types (simulated or measured, RTM or DTM), performs feature extraction, and classifies the input based on similarity to template point clouds.
-
-**Input:** User selection from a menu.
-
-**Output:** Displays the predicted class name.
-
-
-#### 6. Templates_Generator ####
-
-This script generates template point clouds for simulated and measured RTM and DTM data. It processes images from predefined directories, extracts features, and saves the point clouds for use in classification.
-
-**Input:** None, just use predefined paths.
-
-**Output:** .mat files containing point cloud templates.
-
-
-#### 7. Visualization_12_Activities ####
-
-This script visualizes the feature extraction and recognition results for 12 activities across simulated and measured RTM and DTM data, displaying images without axes or labels.
-
-**Input:** None, also use predefined paths.
-
-**Output:** Visualized images saved to specified directories.
-
+None supported codes included.
 
 ### C. Datafiles Explanation (Folder: Root, Visualizations) ###
 
@@ -301,13 +191,9 @@ This script visualizes the feature extraction and recognition results for 12 act
 
 My favorite colormap file used for generating figures in the paper.
 
-#### 2. Class_Names.mat ####
+#### 2. Three subfolders and multiple image files in "Visualizations\" ####
 
-Name strings of $12$ predefined classes of activities.
-
-#### 3. Visualization Sub-Figures ####
-
-High-resolution coordinate-free files for each subplot of the visualization experiments in the paper can be found in the Visualizations folder.
+Eight sets of data used to generate paper visualizations, with corresponding original DTMs, and augmented DTMs.
 
 ## VI. SOME THINGS TO NOTE ##
 
