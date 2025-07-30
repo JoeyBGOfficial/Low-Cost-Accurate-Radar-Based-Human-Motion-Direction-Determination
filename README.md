@@ -35,9 +35,15 @@ The open-source dataset already provides DTM images stored in ".mat" format, so 
 
 Fig. 1. Schematic of the proposed FLM-based feature augmentation method.
 
+#### Dataset_Reconstruction_OS ####
 
-### B. Codes Explanation (Folder: Image_Based_Data_Processing) ###
+This script organizes .mat files from a dataset by traversing 121 subfolders and their secondary subfolders, sorting files into one of eight target folders based on a three-digit direction code in the filename.
 
+**Input:** None (uses predefined `main_path` and `target_path` for source and destination directories).
+
+**Output:** None (copies .mat files to target folders: `000`, `030`, `045`, `060`, `090`, `300`, `315`, `330`).
+
+### B. Codes Explanation (Folder: FLM) ###
 
 #### 1. FLM_Processing ####
 
