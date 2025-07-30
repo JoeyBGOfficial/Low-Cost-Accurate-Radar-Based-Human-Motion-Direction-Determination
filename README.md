@@ -205,6 +205,6 @@ Eight sets of data used to generate paper visualizations, with corresponding ori
 
 **(3) Algorithm Design Issues:** Adjusting the output image scale of FLM can change the amount of micro-Doppler detail information in the augmented DTM. Correspondingly, the size of the input image to the network can be adjusted. To obtain better parameter count and inference speed performance, the number of stacked feature extraction modules in the network can be reduced to two.
 
-**(4) Right Issues: ⭐The project is limited to learning purposes only. Dataset is from open-source work of L. Du et al. Part of the FLM code is from Chunming kunzhan's open source repository. Any use or interpretation without authorized is not allowed!⭐**
+**(4) Right Issues: ⭐The project is limited to learning purposes only. Dataset is from open-source work of L. Du et al. Part of the FLM code is from kunzhan's open source repository. Any use or interpretation without authorized is not allowed!⭐**
 
 Last but not least, hope that my work will bring positive contributions to the open source community in the filed of radar signal processing.
