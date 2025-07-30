@@ -43,9 +43,9 @@ This script organizes .mat files from a dataset by traversing 121 subfolders and
 
 **Output:** None (copies .mat files to target folders: `000`, `030`, `045`, `060`, `090`, `300`, `315`, `330`).
 
-#### Feature_Augmentation_OS ####
+#### Feature_Augmentation_OS.m ####
 
-This script processes .mat files containing 'tfmap' variables from eight subfolders, applies feature augmentation using the FLM_Processing function, and saves the enhanced images as .png files with a 'jet' colormap in corresponding output subfolders.
+This script processes .mat files containing 'tfmap' variables from eight subfolders, applies feature augmentation using the FLM_Processing function, and saves the enhanced images as .png files with a 'jet' colormap in corresponding output subfolders "Open_Source_Dataset\Feature_Enhanced_Dataset_OS\".
 
 **Input:** None (uses predefined `root_dir` for input dataset and `output_root` for output directory; requires `tfmap` in .mat files).
 
