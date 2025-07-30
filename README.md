@@ -25,7 +25,7 @@ This repository is the open source code for my latest work: "Exploration of Low-
 
 **First, download the complete open source dataset and place all subfolders from "001" to "121" in the "Open_Source_Dataset\Original_MAT_Dataset_OS\" path. Next, run the code. After my debugging, if the software version and third-party libraries are installed correctly, there should be no error messages.**
 
-## II. TWR HUMAN ECHO MODEL ##
+## II. MICRO-DOPPLER SIGNATURE AUGMENTATION ##
 
 ### A. Theory in Simple ###
 
