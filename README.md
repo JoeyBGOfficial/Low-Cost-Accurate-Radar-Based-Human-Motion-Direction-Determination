@@ -101,7 +101,6 @@ This function implements the Feature-Linking Model (FLM) to enhance grayscale im
 
 **Output:** 2D matrix `Rep1gs` (enhanced grayscale image).
 
-
 ### C. Datafiles Explanation (None) ###
 
 No datafiles included.
@@ -116,117 +115,53 @@ Essentially, this part uses a slightly modified SBCFormer to implement augmented
 
 Fig. 2. Schematic of the proposed low-cost accurate HMDD model based on a ViT-CNN hybrid architecture.
 
-### B. Codes Explanation (Folder: ACM_Based_Micro-Doppler_Extraction) ###
+#### HMDD_Model_Main.m ####
 
+This script trains and evaluates the HMDD model using the 'Feature_Enhanced_Dataset_OS' dataset, supporting CNN or Transformer architectures, with data preprocessing, model training, and performance evaluation including accuracy and confusion matrix visualization.
 
-#### 1. backward_gradient ####
+**Input:** None (uses predefined `datasetPath` for dataset location; requires `HMDD_Model_Construction_CNN` or `HMDD_Model_Construction_Transformer` functions).
 
-This function computes the backward differences of a 2D matrix `f`, approximating partial derivatives along rows and columns.
+**Output:** None (trains model, saves trained network, and displays accuracy and confusion matrix).
 
-**Input:** 2D matrix `f` of level set function or image.
+#### HMDD_Model_Main_Improved.py ####
 
-**Output:** Two 2D matrices: `bdy` for column-wise backward differences, `bdx` for row-wise backward differences.
+This Python script trains and evaluates a hierarchical ViT-CNN-based model for radar-based human motion direction determination, using data augmentation, label smoothing, and visualization of loss, accuracy, and prediction results on the 'Feature_Enhanced_Dataset_OS' dataset.
 
+**Input:** None (uses predefined `data_dir` for dataset location; requires supporting model scripts).
 
+**Output:** None (saves trained model, plots learning curves, and visualizes prediction results).
 
-#### 2. Corner_Representation ####
+### B. Codes Explanation (Folder: HMDD_Model_Matlab, HMDD_Model_Python) ###
 
-This function detects SIFT corner points in a grayscale image, computes their centroid, and finds the pixels farthest and nearest to it.
+#### 1. HMDD_Model_Construction_CNN.m ####
 
-**Input:** 2D matrix `I` of grayscale image, scalar `Corner_Threshold_Ratio`.
+This function constructs a CNN for image classification, featuring an image input layer, multiple convolutional blocks with residual connections, and a classification head, returning an initialized dlnetwork object.
 
-**Output:** Vectors `farPixel` and `nearPixel` (1x2 vector), normalized image `II_Normalized`, corner locations, and coordinates of farthest/nearest pixels.
+**Input:** Integer `num_classes` (number of classification categories).
 
+**Output:** `HMDD_Model` (dlnetwork object representing the CNN model).
 
+#### 2. HMDD_Model_Construction_Transformer.m ####
 
-#### 3. forward_gradient ####
+This function constructs a Transformer-based neural network for image classification, similar to ViT, with patch embedding, position embedding, multiple Transformer encoder blocks, and a classification head, returning an initialized dlnetwork object.
 
-This function computes the forward differences of a 2D matrix `f`, approximating partial derivatives along rows and columns.
+**Input:** Integer `num_classes` (number of classification categories).
 
-**Input:** 2D matrix `f`.
+**Output:** `HMDD_Model` (dlnetwork object representing the Transformer model).
 
-**Output:** Two 2D matrices: `fdy` for column-wise forward differences, `fdx` for row-wise forward differences.
+#### 3. models.py ####
 
+This Python script defines the model family (XS, S, B, L versions) for image processing, featuring a hierarchical architecture with Stem, SBCFormer Blocks combining local and global feature extraction, and a classification head, tailored for radar-based HMDD tasks.
 
+**Input:** None (defines model architecture with configurable parameters like `img_size`, `num_classes`, `embed_dims`).
 
-#### 4. EVOLUTION_4PHASE ####
+**Output:** None (returns model instances for training or evaluation).
 
-This function evolves two level set functions for four-phase image segmentation using curvature and data fitting terms over multiple iterations.
+### C. Datafiles Explanation (Folder: HMDD_Model_Python\work\model\) ###
 
-**Input:** Image `I`, initial level sets `phi0`, parameters `nu`, `lambda_1`, `lambda_2`, `delta_t`, `epsilon`, and `numIter`.
+#### best_model.pdparams, best_optimizer.pdopt, final_model.pdparams, final_optimizer.pdopt ####
 
-**Output:** Evolved level set functions `phi` in 3D matrix.
-
-
-#### 5. EVOLUTION_4PHASE_DR ####
-
-This function extends `EVOLUTION_4PHASE` by adding a distance regularization term to maintain level set regularity.
-
-**Input:** Same as `EVOLUTION_4PHASE`, plus `mu` for regularization weight.
-
-**Output:** Evolved level set functions `phi` in 3D matrix.
-
-
-
-#### 6. Delta ####
-
-This function computes a smooth approximation of the Dirac delta function for level set methods, focused near the zero level set.
-
-**Input:** 2D matrix `phi` represnets the level set function, scalar `epsilon` for width parameter.
-
-**Output:** 2D matrix `Delta_h` approximating the Dirac delta function.
-
-
-
-#### 7. get_contour ####
-
-This function generates contour points along the perimeter of a rectangular region inset by `margin` pixels in a grid.
-
-**Input:** Image `I` (unused), integers `nrow`, `ncol` of grid size, `margin` of inset distance.
-
-**Output:** Arrays `xcontour` and `ycontour` represent the coordinates of contour points.
-
-
-
-#### 8. Heaviside ####
-
-This function computes a smooth approximation of the Heaviside step function using the arctangent function.
-
-**Input:** 2D matrix or scalar `phi`, scalar `epsilon` for smoothness.
-
-**Output:** Smooth Heaviside function values `H`.
-
-
-#### 9. initial_sdf2circle ####
-
-This function initializes two level set functions as circles centered at specified pixels in a grid.
-
-**Input:** Grid size `nrow`, `ncol`, unused `ic`, `jc`, `fun_n`, radius factor `r`, center coordinates `far_pixel`, `near_pixel`.
-
-**Output:** 3D matrix `f` containing two level set functions.
-
-
-#### 10. quadrifit ####
-
-This function computes constants `C` that best fit an image `U` across four regions defined by two level set functions, using a smooth Heaviside approximation.
-
-**Input:** Level sets `phi` in 3D matrix, image `U`, `epsilon`, number of functions `fun_n` .
-
-**Output:** Vector `C` regional constants, intermediate factors `mult` in 4D matrix.
-
-
-#### 11. CURVATURE_CV ####
-
-This function computes the curvature of a 2D matrix `f` using different finite difference schemes specified by `diff_scheme`.
-
-**Input:** 2D matrix `f` of level set function or image, Integer `diff_scheme` (0, 1, or 2) selecting the difference scheme.
-
-**Output:** 2D matrix `K` representing the approximated curvature of `f`.
-
-### C. Datafiles Explanation (Folder: None) ###
-
-None.
-
+Python version network that stores the model files of the optimal epoch and the last epoch during training.
 
 ## IV. Indoor HAR Based on Point Cloud Matching ###
 
