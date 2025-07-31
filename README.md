@@ -11,7 +11,7 @@ This repository is the open source code for my latest work: "Exploration of Low-
 
 $\textbf{\textcolor{red}{Full Version of Paper}}$ can be downloaded at: https://online.flippingbook.com/view/1011202020/.
 
-$\textbf{\textcolor{blue}{arXiv Simplified Version of Paper}}$ can be downloaded at:
+$\textbf{\textcolor{blue}{arXiv Simplified Version of Paper}}$ can be downloaded at: https://arxiv.org/abs/2507.22567.
 
 **My Email:** JoeyBG@126.com;
 
