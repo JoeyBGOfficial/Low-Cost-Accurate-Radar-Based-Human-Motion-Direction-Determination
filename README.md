@@ -9,7 +9,7 @@ So this is the second project that I am publishing on a preprint platform, which
 
 This repository is the open source code for my latest work: "Exploration of Low-Cost but Accurate Radar-Based Human Motion Direction Determination", submitted to arXiv.
 
-$\textbf{\textcolor{red}{Full Version of Paper}}$ can be downloaded at: https://online.flippingbook.com/view/1011202020/.
+$\textbf{\textcolor{red}{Full Version of Paper}}$ can be downloaded at: https://drive.google.com/file/d/1lfpuDsluzSFP5JyAO-H6ACWGY9XwL25D/view?usp=sharing.
 
 $\textbf{\textcolor{blue}{arXiv Simplified Version of Paper}}$ can be downloaded at: https://arxiv.org/abs/2507.22567.
 
